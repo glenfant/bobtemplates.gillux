@@ -1,0 +1,12 @@
+[nosetests]
+tests = tests
+#with-xunit = 1
+#xunit-file = logs/nosetests.xml
+detailed-errors = 1
+verbosity = 2
+with-coverage = 1
+cover-package = {{{ pkgname }}}
+# See http://nose.readthedocs.org/en/latest/plugins/doctests.html
+with-doctest = true
+doctest-extension = .rst
+doctest-fixtures = _fixt

@@ -1,0 +1,27 @@
+.. _index:
+
+{{{ rst_pkgname }}}
+
+{{{ description }}}
+
+FIXME: provide a two paragraphs summary of this package
+
+.. rubric:: Contents :
+
+.. toctree::
+   :maxdepth: 2
+
+   overview
+   api
+{{% if doctestinclude %}}
+   tests/index
+{{% endif %}}
+   contributors
+   changes
+
+Indexes and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

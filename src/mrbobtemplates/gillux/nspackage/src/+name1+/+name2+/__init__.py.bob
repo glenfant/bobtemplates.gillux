@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""
+{{{ rst_pkgname }}}
+
+{{{ description }}}
+"""
+
+import sys
+import logging
+import pkg_resources
+
+# Custom logger
+LOG = logging.getLogger(name=__name__)
+if sys.version_info < (2, 7):
+    class NullHandler(logging.Handler):
+        """Copied from Python 2.7 to avoid getting `No handlers could be found
+        for logger "xxx"` http://bugs.python.org/issue16539
+        """
+        def handle(self, record):
+            pass
+        def emit(self, record):
+            pass
+        def createLock(self):
+            self.lock = None
+else:
+    from logging import NullHandler
+
+LOG.addHandler(NullHandler())
+
+# PEP 396
+try:
+    __version__ = pkg_resources.get_distribution(__name__).version
+except:
+    LOG.warning("Could not get the package version from pkg_resources")
+    __version__ = 'unknown'

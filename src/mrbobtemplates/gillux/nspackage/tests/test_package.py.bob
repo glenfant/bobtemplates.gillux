@@ -1,0 +1,60 @@
+# -*- coding: utf-8 -*-
+"""Unit tests of {{{ pkgname }}}"""
+
+from nose.tools import nottest, istest
+from nose.tools import set_trace  # Breakpoint for nosetests
+
+try:
+    # Up to Python 2.6
+    import unittest2 as unittest
+except ImportError:
+    import unittest
+
+import resources
+
+#from nose.tools import set_trace  # Breakpoint for nosetests
+
+###
+# Test layers
+###
+
+@nottest
+def setup_module():
+    # Setups for all tests of this module
+    return
+
+@nottest
+def teardown_module():
+    # Cleanups for all tests of this module
+    return
+
+###
+# Test cases
+###
+
+class SomeTest(unittest.TestCase):
+    """FIXME: describe here what you are testing
+    """
+    @classmethod
+    def setUpClass(cls):
+        # Setups before first test of this class
+        return
+
+    @classmethod
+    def tearDownClass(cls):
+        # Cleanups after last test of this class
+        return
+
+    def setUp(self):
+        # Setups before each test of this class
+        return
+
+    def tearDown(self):
+        # Cleanups after each test of this class
+        return
+
+    def test_fake(self):
+        """FIXME: provide your first test here
+        """
+        self.assertEqual(1, 1)
+        return
