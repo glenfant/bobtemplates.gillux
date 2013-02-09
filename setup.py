@@ -18,7 +18,7 @@ setup(
     name='mrbobtemplates.gillux',
     version=_version,
     description="Templates for mr.bob",
-    long_description=_read('README.rst', 'CHANGES.rst'),
+    long_description=_read('README.rst') + '\n\n' + _read('CHANGES.rst'),
     classifiers=[
         "Programming Language :: Python",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
