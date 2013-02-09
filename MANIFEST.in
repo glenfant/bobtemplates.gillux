@@ -1,3 +1,2 @@
 include README.rst
-include docs/CONTRIBUTORS.rst
-include docs/CHANGES.rst
+include CHANGES.rst

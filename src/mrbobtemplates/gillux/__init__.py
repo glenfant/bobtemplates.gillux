@@ -11,6 +11,8 @@ import os
 import logging
 import pkg_resources
 
+from mrbob import TemplateDescription
+
 # Custom logger
 logger = logging.getLogger(name=__name__)
 if sys.version_info < (2, 7):
@@ -38,7 +40,6 @@ except:
 
 # Templates registration
 this_directory = os.path.dirname(os.path.abspath(__file__))
-nspackage = {
-    'directory': os.path.join(this_directory, 'nspackage'),
-    'description': "A 2 names namespace Python package."
-}
+
+class NSPackage(TemplateDescription):
+    path = os.path.join(this_directory, 'nspackage')

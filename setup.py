@@ -35,8 +35,8 @@ setup(
     zip_safe=False,
     install_requires=['setuptools', 'mr.bob'],
     entry_points={
-        'mrbobtemplates': [
-            'nspackage=mrbobtemplates.gillux:nspackage'
+        'bobtemplates': [
+            'nspackage=mrbobtemplates.gillux:NSPackage'
         ]
     },
     tests_require=_test_packages,

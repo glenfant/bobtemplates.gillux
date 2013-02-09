@@ -1,3 +1,0 @@
-[mrbobtemplates]
-nspackage = mrbobtemplates.gillux:nspackage
-
