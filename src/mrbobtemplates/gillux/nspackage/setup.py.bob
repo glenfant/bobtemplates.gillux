@@ -25,6 +25,10 @@ tests_require = ['nose', 'nosexcover']
 if sys.version_info < (2, 7):
     tests_require += ['unittest2']
 
+# FIXME: Your egg name may differ from the root package name.
+#        You may change below the "name" parameter to whatever's compatible
+#        with an egg name.
+
 setup(name='{{{ pkgname }}}',
       version=version,
       description="{{{ description }}}",
@@ -37,11 +41,13 @@ setup(name='{{{ pkgname }}}',
       keywords='',  # FIXME: Add whatefer fits
       author='{{{ author.name }}}',
       author_email='{{{ author.email }}}',
-      url='http://http://pypi.python.org/pypi/{{{ pkgname }}}',
+      url='http://pypi.python.org/pypi/{{{ pkgname }}}',
       license='GPLv3',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
-      namespace_packages=['{{{ name1 }}}'],
+{{% if has_namespaces %}}
+      namespace_packages=[{{{ namespace_packages }}}],
+{{% endif %}}
       include_package_data=True,
       zip_safe=False,
       install_requires=[

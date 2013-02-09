@@ -37,6 +37,8 @@ Usage (short)::
 Then grep - and optionally fix - the ``FIXME:`` that occur in the resulting
 files tree for optional stuffs I couldn't fix with the regular mr.bob features.
 
+TODO: Provide a Python 3.x option
+
 Links
 =====
 

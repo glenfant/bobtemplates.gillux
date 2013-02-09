@@ -18,7 +18,7 @@ setup(
     name='mrbobtemplates.gillux',
     version=_version,
     description="Templates for mr.bob",
-    long_description=_read('README.rst'),
+    long_description=_read('README.rst', 'CHANGES.rst'),
     classifiers=[
         "Programming Language :: Python",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
@@ -40,7 +40,6 @@ setup(
         ]
     },
     tests_require=_test_packages,
-    test_suite='nose.collector',
     extra_requires={
         'test': _test_packages
     }
