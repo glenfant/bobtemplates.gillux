@@ -1,3 +1,3 @@
-graft src/mrbobtemplates/gillux/nspackage
+graft src/bobtemplates/gillux/nspackage
 include README.rst
 include CHANGES.rst

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-=====================
-mrbobtemplates.gillux
-=====================
+===================
+bobtemplates.gillux
+===================
 
 A bunch of templates for mr.bob
 """

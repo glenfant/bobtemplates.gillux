@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""mrbobtemplates.gillux"""
+"""bobtemplates.gillux"""
 
 from setuptools import setup, find_packages
 import os
@@ -14,7 +14,7 @@ def _read(*names):
 
 
 setup(
-    name='mrbobtemplates.gillux',
+    name='bobtemplates.gillux',
     version=_version,
     description="Templates for mr.bob",
     long_description=_read('README.rst') + '\n\n' + _read('CHANGES.rst'),
@@ -29,13 +29,13 @@ setup(
     license='GPLv3',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    namespace_packages=['mrbobtemplates'],
+    namespace_packages=['bobtemplates'],
     include_package_data=True,
     zip_safe=False,
     install_requires=['setuptools', 'mr.bob'],
     entry_points={
         'bobtemplates': [
-            'nspackage=mrbobtemplates.gillux:NSPackage'
+            'nspackage=bobtemplates.gillux:NSPackage'
         ]
     },
     tests_require=_test_packages,

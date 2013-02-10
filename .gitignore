@@ -3,5 +3,5 @@
 *.pyo
 *.egg-info/
 .idea/*
-src/mrbobtemplates.gillux.egg-info/*
+src/bobtemplates.gillux.egg-info/*
 dist/*

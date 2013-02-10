@@ -1,6 +1,6 @@
-=====================
-mrbobtemplates.gillux
-=====================
+===================
+bobtemplates.gillux
+===================
 
 Python package template for `mr.bob <http://pypi.python.org/pypi/mr.bob/>`_
 
@@ -32,7 +32,7 @@ Package files outline::
 
 Usage (short)::
 
-  mrbob -O my.package mrbobtemplates.gillux:nspackage
+  mrbob -O my.package bobtemplates.gillux:nspackage
 
 Then grep - and optionally fix - the ``FIXME:`` that occur in the resulting
 files tree for optional stuffs I couldn't fix easily with the regular mr.bob
@@ -52,9 +52,9 @@ Links
 =====
 
 Project workspace @ Github (contribute, file issues...):
-    https://github.com/glenfant/mrbobtemplates.gillux
+    https://github.com/glenfant/bobtemplates.gillux
 Pypi:
-    http://pypi.python.org/pypi/mrbobtemplates.gillux
+    http://pypi.python.org/pypi/bobtemplates.gillux
 ``mr.bob`` @ Pypi
     http://pypi.python.org/pypi/mr.bob/
 ``mr.bob`` @ readthedocs.org
