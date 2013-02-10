@@ -5,6 +5,9 @@
 {{{ description }}}
 """
 
+# FIXME: Please read http://pythonhosted.org/distribute/setuptools.html to
+#        customize in depth your setup script
+
 from setuptools import setup, find_packages
 import os, sys
 

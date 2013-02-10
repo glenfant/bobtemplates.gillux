@@ -14,7 +14,7 @@ nspackage
 
 A namespace package like ``foo.bar`` with following features :
 
-- Works for Python 2.4 to 2.7
+- Code targeted to Python 2.4 to 2.7
 - Tests with **nose** and **nosexcover**. Run them with ``python setup.py
   nosetests``
 - A **Sphinx** documentation skeleton. Build the HTML doc with ``python setup.py
@@ -35,9 +35,18 @@ Usage (short)::
   mrbob -O my.package mrbobtemplates.gillux:nspackage
 
 Then grep - and optionally fix - the ``FIXME:`` that occur in the resulting
-files tree for optional stuffs I couldn't fix with the regular mr.bob features.
+files tree for optional stuffs I couldn't fix easily with the regular mr.bob
+features.
 
-TODO: Provide a Python 3.x option
+Read the generated ``README.rst`` in your newly created package for more
+information about what you got.
+
+**TODO**
+
+- Provide a Python 3.x option
+- Provide a `six <http://pypi.python.org/pypi/six/>`_ support option
+- Add "ignored files list" for most popular SCMs (git, mercurial, bzr, svn)
+- Make nosetests and sphinx supports optional
 
 Links
 =====
@@ -46,3 +55,7 @@ Project workspace @ Github (contribute, file issues...):
     https://github.com/glenfant/mrbobtemplates.gillux
 Pypi:
     http://pypi.python.org/pypi/mrbobtemplates.gillux
+``mr.bob`` @ Pypi
+    http://pypi.python.org/pypi/mr.bob/
+``mr.bob`` @ readthedocs.org
+  http://mrbob.readthedocs.org/en/latest/
