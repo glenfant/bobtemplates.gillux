@@ -11,7 +11,12 @@ import os
 import logging
 import pkg_resources
 
-from mrbob import TemplateDescription
+# Support for mrbob experimental feature (not yet released)
+try:
+    from mrbob import TemplateDescription
+except ImportError:
+    class TemplateDescription(object):
+        pass
 
 # Custom logger
 logger = logging.getLogger(name=__name__)
