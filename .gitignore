@@ -2,10 +2,6 @@
 *.pyc
 *.pyo
 *.egg-info/
-/.idea/
-
-src/mrbobtemplates.gillux.egg-info/SOURCES.txt
-
-src/mrbobtemplates.gillux.egg-info/PKG-INFO
-
-src/mrbobtemplates.gillux.egg-info/entry_points.txt
+.idea/*
+src/mrbobtemplates.gillux.egg-info/*
+dist/*
