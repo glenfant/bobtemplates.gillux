@@ -12,7 +12,7 @@ Only one template in this version of ``bobtempaltes.gillux``.
 nspackage
 ---------
 
-A namespace package like ``foo.bar`` with following features :
+A regular Python package like (possibly with namespace like ``foo.bar``) with following features :
 
 - Code targeted to Python 2.4 to 2.7
 - Tests with **nose** and **nosexcover**. Run them with ``python setup.py
