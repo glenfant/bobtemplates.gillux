@@ -2,7 +2,7 @@
 bobtemplates.gillux
 ===================
 
-Python package template for `mr.bob <http://pypi.python.org/pypi/mr.bob/>`_
+Python package templates for `mr.bob <http://pypi.python.org/pypi/mr.bob/>`_
 
 About the templates
 ===================
@@ -12,8 +12,10 @@ Only one template in this version of ``bobtempaltes.gillux``.
 nspackage
 ---------
 
-A regular Python package like (possibly with namespace like ``foo.bar``) with following features :
+A regular Python package bootstrap with following features:
 
+- Any namespaces level you want, even none at all. This is detected with the
+  name you provide in the wizard.
 - Code targeted to Python 2.4 to 2.7
 - Tests with **nose** and **nosexcover**. Run them with ``python setup.py
   nosetests``
