@@ -46,5 +46,5 @@ def post_render(config):
         # We just need to rename 'coderoot'
         os.rename(os.path.join(src_root, 'coderoot'), os.path.join(src_root, pkgname))
 
-    print "Grep for \"FIXME:\" in the generated files"
+    print("Grep for \"FIXME:\" in the generated files")
 

@@ -4,7 +4,7 @@ Changes log
 1.0.0a3-dev
 -----------
 
-...
+- Python 3 style print
 
 1.0.0a2
 -------
