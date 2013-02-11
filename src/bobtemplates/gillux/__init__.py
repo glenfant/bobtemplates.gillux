@@ -7,19 +7,17 @@ bobtemplates.gillux
 A bunch of templates for mr.bob
 """
 import sys
-import os
 import logging
 import pkg_resources
 
 # Support for mrbob experimental feature (not yet released)
 try:
-    from mrbob import TemplateDescription
+    from mrbob import register_template
 except ImportError:
-    class TemplateDescription(object):
-        pass
+    register_template = lambda x, y="": None
 
 # Custom logger
-logger = logging.getLogger(name=__name__)
+LOG = logging.getLogger(name=__name__)
 if sys.version_info < (2, 7):
     class NullHandler(logging.Handler):
         """Copied from Python 2.7 to avoid getting `No handlers could be found
@@ -34,7 +32,7 @@ if sys.version_info < (2, 7):
 else:
     from logging import NullHandler
 
-logger.addHandler(NullHandler())
+LOG.addHandler(NullHandler())
 
 # PEP 0396
 try:
@@ -44,7 +42,5 @@ except:
     __version__ = 'unknown'
 
 # Templates registration
-this_directory = os.path.dirname(os.path.abspath(__file__))
 
-class NSPackage(TemplateDescription):
-    path = os.path.join(this_directory, 'nspackage')
+nspackage = register_template('nspackage')
