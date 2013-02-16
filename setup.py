@@ -35,7 +35,8 @@ setup(
     install_requires=['setuptools', 'mr.bob'],
     entry_points={
         'bobtemplates': [
-            'nspackage=bobtemplates.gillux:nspackage'
+            'nspackage=bobtemplates.gillux:nspackage',
+            'buildout=bobtemplates.gillux:buildout'
         ]
     },
     tests_require=_test_packages,

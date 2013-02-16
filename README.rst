@@ -7,7 +7,15 @@ Python package templates for `mr.bob <http://pypi.python.org/pypi/mr.bob/>`_
 About the templates
 ===================
 
-Only one template in this version of ``bobtempaltes.gillux``.
+``bobtempaltes.gillux`` offers the following templates :
+
+buildout
+
+  A simple minimal zc.buildout based project bootstrap
+
+nspackage
+
+  A regular Python package with or without namespace, any level
 
 nspackage
 ---------

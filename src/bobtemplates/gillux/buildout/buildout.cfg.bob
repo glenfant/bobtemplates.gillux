@@ -1,0 +1,8 @@
+[buildout]
+# Please read the docs at http://pypi.python.org/pypi/zc.buildout/{{{ bo_version }}}
+{{% if main_bo_version == 1 %}}
+versions = versions
+{{% endif %}}
+
+[versions]
+zc.buildout = {{{ bo_version }}}

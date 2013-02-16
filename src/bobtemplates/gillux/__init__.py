@@ -44,3 +44,4 @@ except:
 # Templates registration
 
 nspackage = register_template('nspackage')
+buildout = register_template('buildout')

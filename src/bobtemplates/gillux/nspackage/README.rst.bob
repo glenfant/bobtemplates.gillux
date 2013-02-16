@@ -27,3 +27,20 @@ Build the Sphinx documentation::
 
   $ python setup.py build_sphinx
   $ firefox build/sphinx/html/index.html
+
+Links
+=====
+
+FIXME: Provide real links
+
+Project home page
+
+  http://www.mystuff.com/project
+
+Source code
+
+  http://www.mystuff.com/source
+
+Issues tracker
+
+  http://www.mystuff.com/issues

@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
 """Hooks for mr.bob. See http://mrbob.readthedocs.org/en/latest/templateauthor.html#hooks"""
 import os
-from pdb import set_trace
 import time
+import urllib2
+import pkg_resources
 
-def pre_render(config):
+###
+# nspackage hooks
+###
+
+def nspackage_pre_render(config):
     pkgname = config.variables['pkgname']
 
     ul_pkgname = '=' * len(pkgname)
@@ -27,7 +32,7 @@ def pre_render(config):
 
 NS_INIT = "__import__('pkg_resources').declare_namespace(__name__)\n"
 
-def post_render(config):
+def nspackage_post_render(config):
     # We need to rename the "coderoot" package appropriately
     src_root = os.path.join(config.target_directory, 'src')
     pkgname = config.variables['pkgname']
@@ -48,3 +53,27 @@ def post_render(config):
 
     print("Grep for \"FIXME:\" in the generated files")
 
+###
+# buildout hooks
+###
+
+def buildout_pre_render(config):
+    bo_version = config.variables['bo_version']
+    main_bo_version = int(pkg_resources.parse_version(bo_version)[0])
+    add_vars = {
+        'main_bo_version': main_bo_version
+    }
+    config.variables.update(add_vars)
+    return
+
+def buildout_post_render(config):
+    main_bo_version = config.variables['main_bo_version']
+
+    # We have different bootstraps depending on zc.buildout version
+    # http://pypi.python.org/pypi/zc.buildout
+    bootstrap_url = "http://downloads.buildout.org/{0}/bootstrap.py".format(main_bo_version)
+    bootstrap_in = urllib2.urlopen(bootstrap_url)
+    bootstrap_py_path = os.path.join(config.target_directory, 'bootstrap.py')
+    with open(bootstrap_py_path, 'w') as bootstrap_py:
+        bootstrap_py.write(bootstrap_in.read())
+    return
