@@ -17,8 +17,23 @@ nspackage
 
   A regular Python package with or without namespace, any level
 
+buildout
+--------
+
+Usage ::
+
+  > mrbob [options] buildout
+  > mrbob [options] bobtemplates.gillux:buildout
+
+
+
 nspackage
 ---------
+
+Usage ::
+
+  > mrbob [options] nspackage
+  > mrbob [options] bobtemplates.gillux:nspackage
 
 A regular Python package bootstrap with following features:
 
