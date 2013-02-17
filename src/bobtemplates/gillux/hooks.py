@@ -10,7 +10,12 @@ else:
     from urllib2 import urlopen
 import pkg_resources
 
-from mrbob.exceptions import ValidationError
+try:
+    from mrbob.exceptions import ValidationError
+except ImportError:
+    # FIXME: Temporary
+    class ValidationError(Exception):
+        pass
 
 ###
 # nspackage hooks

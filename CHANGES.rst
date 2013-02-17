@@ -13,6 +13,10 @@ Changes log
 - Added .xxignore files for git, bazaar and mercurial
   [glenfant]
 
+- Gone through the weirdness of include_package_data, package_data and MANIFEST.in
+  This setuptools / distribute feature really sucks
+  [glenfant]
+
 1.0.0a2
 -------
 
