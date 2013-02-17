@@ -4,7 +4,7 @@
 from setuptools import setup, find_packages
 import os
 
-_version = '1.0.0b1'
+_version = '1.0.0b2-dev'
 _test_packages = []
 
 _THIS_DIRECTORY = os.path.abspath(os.path.dirname(__file__))
@@ -25,7 +25,7 @@ setup(
     keywords='mr.bob template',
     author='Gilles Lenfant',
     author_email='gilles.lenfant@gmail.com',
-    url='http://pypi.python.org/',
+    url='http://pypi.python.org/pypi/bobtemplates.gillux',
     license='GPLv3',
     packages=find_packages('src'),
     package_dir={'': 'src'},
