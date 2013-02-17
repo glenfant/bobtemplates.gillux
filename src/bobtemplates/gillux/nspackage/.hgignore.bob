@@ -1,0 +1,10 @@
+.DS_Store
+.coverage
+build/
+dist/
+.*\.pyc
+.*\.pyo
+.*\.egg-info
+{{% if doctestinclude %}}
+docs/tests
+{{% endif %}}
