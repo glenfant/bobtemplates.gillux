@@ -86,6 +86,15 @@ def nspackage_post_render(config):
         path = os.path.join(config.target_directory, name)
         os.remove(path)
 
+    # setuptools / distribute suck. We cannot distribute empty directories
+    # so we need to add docs/_templates and docs/_static in the distro but
+    # we need to delete them from the built project bootstrap
+    readme_path = lambda dir_: os.path.join(config.target_directory, 'docs', _dir, 'README.rst')
+    for dirname in ('_templates', '_static'):
+        readme_path = os.path.join(config.target_directory, 'docs', dirname, 'README.rst')
+        os.remove(readme_path)
+
+    # Done
     print("Grep for \"FIXME:\" in the generated files")
     return
 

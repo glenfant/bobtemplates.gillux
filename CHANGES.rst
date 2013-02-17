@@ -1,6 +1,12 @@
 Changes log
 ===========
 
+1.0.0b2-dev
+-----------
+
+- setuptools/distribute don't let us distribute empty directories. so we need to put
+  a marker file in some directories then remove them.
+
 1.0.0b1
 -------
 
