@@ -26,6 +26,9 @@ Usage ::
   > mrbob [options] bobtemplates.gillux:buildout
 
 
+This provides a minimal zc.buildout based project, with a ``bootstrap.py``
+file and a buildout.cfg file. Takes care of differences between versions 1.x
+and 2.x of zc.buildout.
 
 nspackage
 ---------

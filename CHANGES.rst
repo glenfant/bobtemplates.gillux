@@ -1,10 +1,17 @@
 Changes log
 ===========
 
-1.0.0a3-dev
------------
+1.0.0b1
+-------
 
-- Python 3 style print
+- Python 3 support (alpha). Please feeback
+  [glenfant]
+
+- Added the "buildout" template, a minimal zc.buildout project bootstrap
+  [glenfant]
+
+- Added .xxignore files for git, bazaar and mercurial
+  [glenfant]
 
 1.0.0a2
 -------
