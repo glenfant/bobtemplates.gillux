@@ -36,7 +36,8 @@ setup(
     entry_points={
         'bobtemplates': [
             'nspackage=bobtemplates.gillux:nspackage',
-            'buildout=bobtemplates.gillux:buildout'
+            'buildout=bobtemplates.gillux:buildout',
+            'mybobtemplate=bobtemplates.gillux:mybobtemplate'
         ]
     },
     tests_require=_test_packages,

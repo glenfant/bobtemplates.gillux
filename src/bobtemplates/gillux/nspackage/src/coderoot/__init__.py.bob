@@ -27,7 +27,7 @@ else:
 
 LOG.addHandler(NullHandler())
 
-# PEP 396
+# PEP 396 style version marker
 try:
     __version__ = pkg_resources.get_distribution(__name__).version
 except:

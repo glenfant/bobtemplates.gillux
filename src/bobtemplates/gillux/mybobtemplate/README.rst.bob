@@ -2,31 +2,15 @@
 
 {{{ description }}}
 
-FIXME: provide a two paragraphs summary of this package
+FIXME: provide a two paragraphs summary of this and the project templates it provides
 
-Full documentation and API
-==========================
+Templates
+=========
+{{% for item in templatenames %}}
 
-FIXME: Provide the URL of the documentation (@ readthedocs.org ?)
-
-Developer notes
-===============
-
-Please use a virtualenv to maintain this package, but I should not need to say that.
-
-Grab the source from the SCM repository::
-
-  $ python setup.py develop
-  $ easy_install {{{ pkgname }}}[test,devel]
-
-Run the tests::
-
-  $ python setup.py nosetests
-
-Build the Sphinx documentation::
-
-  $ python setup.py build_sphinx
-  $ firefox build/sphinx/html/index.html
+{{{ item }}}
+  FIXME: A short description of what provides this template
+{{% endfor %}}
 
 Links
 =====

@@ -28,9 +28,14 @@ buildout
 
   A simple minimal zc.buildout based project bootstrap
 
+mybobtemplate
+
+  Make your own **bobtemplate.yourname** package in a few minutes (or more).
+
 nspackage
 
-  A regular Python package with or without namespace, any level
+  A regular Python package with or without namespace, any level with lots of
+  goodies.
 
 buildout
 --------
@@ -43,6 +48,21 @@ Usage ::
 This provides a minimal zc.buildout based project, with a ``bootstrap.py``
 file and a buildout.cfg file. Takes care of differences between versions 1.x
 and 2.x of zc.buildout.
+
+mybobtemplate
+-------------
+
+Usage ::
+
+  > mrbob [options] bobtemplates.gillux:mybobtemplate
+  > mrbob [options] mybobtemplate
+
+Make your own **bobtemplate.yourname** package in a few minutes (or more).
+Means that you can have the skeleton of a package like ``bobtemplates.gillux``
+in some seconds.
+
+You just need to add the content of your template as described in the `mr.bob
+documentation`_
 
 nspackage
 ---------
@@ -86,7 +106,13 @@ information about what you got.
 **TODO**
 
 - Provide a `six <http://pypi.python.org/pypi/six/>`_ support option
-- Make nosetests and sphinx supports optional
+- Make nosetests supports optional (use unittest2 or unittest)
+- Make Sphinx support optional (overkill for small packages, remove the docs/
+  subtree)
+- Tests inside the source tree (in src/<your>/<package>/tests) OR in the
+  package root. Sometimes we prefer to ship source distros with the tests, and
+  sometimes (i.e big amount of test data) we prefer to keep a source dist
+  small.
 
 Links
 =====

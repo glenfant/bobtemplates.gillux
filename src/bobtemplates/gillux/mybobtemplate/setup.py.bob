@@ -20,13 +20,9 @@ def read(*names):
 
 long_description = '\n\n'.join(
     [read(*paths) for paths in (('README.rst',),
-                               ('docs', 'contributors.rst'),
-                               ('docs', 'changes.rst'))]
+                               ('CHANGES.rst',))]
     )
 
-tests_require = ['nose', 'nosexcover']
-if sys.version_info < (2, 7):
-    tests_require += ['unittest2']
 
 # FIXME: Your egg name may differ from the root package name.
 #        You may change below the "name" parameter to whatever's compatible
@@ -40,7 +36,7 @@ setup(name='{{{ pkgname }}}',
       classifiers=[
           "Programming Language :: Python",
           "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
-          ],
+      ],
       keywords='',  # FIXME: Add whatefer fits
       author='{{{ author.name }}}',
       author_email='{{{ author.email }}}',
@@ -53,25 +49,13 @@ setup(name='{{{ pkgname }}}',
 {{% endif %}}
       include_package_data=True,
       zip_safe=False,
-      install_requires=[
-          # 3rd party
-          'setuptools'
-          # Others
-          ],
+      install_requires=['setuptools', 'mr.bob'],
       entry_points={
-          },
-      tests_require=tests_require,
-      test_suite='nose.collector',
-      extras_require={
-          'test': tests_require,
-          'devel': ['Sphinx', 'ipython', 'ipdb', 'readline']
+          'bobtemplates': [
+{{% for item in templatenames %}}
+              '{{{ item }}}=bobtemplates.{{{ pkgext }}}:{{{ item }}}'{{% if not loop.last %}},{{% endif %}}
+
+{{% endfor %}}
+          ]
       },
-      command_options={
-          'build_sphinx': {
-              'project': ('setup.py', '{{{ pkgname }}}'),
-              'version': ('setup.py', version),
-              'release': ('setup.py', version),
-              'source_dir': ('setup.py', os.path.join(this_directory, 'docs'))
-            }
-        },
       )

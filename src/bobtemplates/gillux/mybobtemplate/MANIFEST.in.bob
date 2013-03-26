@@ -1,3 +1,5 @@
-{{{ manifest_grafts }}}
+{{% for item in templatenames %}}
+graft src/bobtemplates/{{{ pkgext }}}/{{{ item }}}
+{{% endfor %}}
 include README.rst
 include CHANGES.rst

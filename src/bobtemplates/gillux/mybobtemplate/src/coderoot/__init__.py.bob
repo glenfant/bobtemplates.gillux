@@ -9,6 +9,12 @@ import sys
 import logging
 import pkg_resources
 
+# Support for mrbob experimental feature (not yet released)
+try:
+    from mrbob import register_template
+except ImportError:
+    register_template = lambda x, y="": None
+
 # Custom logger
 LOG = logging.getLogger(name=__name__)
 if sys.version_info < (2, 7):
@@ -33,3 +39,8 @@ try:
 except:
     LOG.warning("Could not get the package version from pkg_resources")
     __version__ = 'unknown'
+
+# Templates registration
+{{% for item in templatenames %}}
+{{{ item }}} = register_template('{{{ item }}}')
+{{% endfor %}}

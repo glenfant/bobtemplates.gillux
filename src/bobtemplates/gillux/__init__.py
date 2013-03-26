@@ -34,7 +34,7 @@ else:
 
 LOG.addHandler(NullHandler())
 
-# PEP 0396
+# PEP 0396 style version marker
 try:
     __version__ = pkg_resources.get_distribution(__name__).version
 except:
@@ -45,3 +45,4 @@ except:
 
 nspackage = register_template('nspackage')
 buildout = register_template('buildout')
+mybobtemplate = register_template('mybobtemplate')
