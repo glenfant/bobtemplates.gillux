@@ -1,8 +1,8 @@
 Changes log
 ===========
 
-1.0.0b2-dev
------------
+1.0.0
+-----
 
 - Added the "mybobtemplate" template for new bobtemplates.xxx packages skeletons.
   [glenfant]
@@ -10,7 +10,7 @@ Changes log
 - Added .xxignore files for git, bazaar and mercurial to the "buildout" template.
   [glenfant]
 
-- setuptools/distribute don't let us distribute empty directories. so we need to put
+- setuptools/distribute don't let us distribute empty directories. So we need to put
   a marker file in some directories then remove them.
   [glenfant]
 

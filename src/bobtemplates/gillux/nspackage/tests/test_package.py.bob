@@ -12,7 +12,6 @@ except ImportError:
 
 import resources
 
-#from nose.tools import set_trace  # Breakpoint for nosetests
 
 ###
 # Test layers

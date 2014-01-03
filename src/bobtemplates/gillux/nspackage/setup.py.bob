@@ -5,7 +5,7 @@
 {{{ description }}}
 """
 
-# FIXME: Please read http://pythonhosted.org/distribute/setuptools.html to
+# FIXME: Please read http://pythonhosted.org/setuptools/setuptools.html to
 #        customize in depth your setup script
 
 from setuptools import setup, find_packages
@@ -64,7 +64,7 @@ setup(name='{{{ pkgname }}}',
       test_suite='nose.collector',
       extras_require={
           'test': tests_require,
-          'devel': ['Sphinx', 'ipython', 'ipdb', 'readline']
+          'devel': ['Sphinx', 'ipython', 'ipdb']
       },
       command_options={
           'build_sphinx': {

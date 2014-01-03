@@ -21,7 +21,7 @@ Grab the source from the SCM repository::
 
 Run the tests::
 
-  $ python setup.py nosetests
+  $ nosetests
 
 Build the Sphinx documentation::
 

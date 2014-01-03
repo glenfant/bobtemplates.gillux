@@ -1,10 +1,10 @@
 [nosetests]
 tests = tests
-#with-xunit = 1
-#xunit-file = logs/nosetests.xml
 detailed-errors = 1
 verbosity = 2
-with-coverage = 1
+#with-coverage = 1
+#with-xunit = 1
+#xunit-file = logs/nosetests.xml
 cover-package = {{{ pkgname }}}
 # See http://nose.readthedocs.org/en/latest/plugins/doctests.html
 with-doctest = true

@@ -43,7 +43,6 @@ buildout
 Usage ::
 
   > mrbob [options] bobtemplates.gillux:buildout
-  > mrbob [options] buildout
 
 This provides a minimal zc.buildout based project, with a ``bootstrap.py``
 file and a buildout.cfg file. Takes care of differences between versions 1.x
@@ -55,7 +54,6 @@ mybobtemplate
 Usage ::
 
   > mrbob [options] bobtemplates.gillux:mybobtemplate
-  > mrbob [options] mybobtemplate
 
 Make your own **bobtemplate.yourname** package in a few minutes (or more).
 Means that you can have the skeleton of a package like ``bobtemplates.gillux``
@@ -70,7 +68,6 @@ nspackage
 Usage ::
 
   > mrbob [options] bobtemplates.gillux:nspackage
-  > mrbob [options] nspackage
 
 A regular Python package bootstrap with following features:
 
@@ -80,7 +77,7 @@ A regular Python package bootstrap with following features:
 
 - Tests with `nose <https://nose.readthedocs.org/en/latest/index.html>`_ and
   `nosexcover <http://pypi.python.org/pypi/nosexcover/>`_. Run them with
-  ``python setup.py nosetests``
+  ``nosetests``. Tune your options in generated ``setup.cfg``.
 
 - A `Sphinx <http://sphinx-doc.org/>`_ documentation skeleton. Build the HTML
   doc with ``python setup.py build_sphinx``. The doctest files may optionally
@@ -106,7 +103,7 @@ information about what you got.
 **TODO**
 
 - Provide a `six <http://pypi.python.org/pypi/six/>`_ support option
-- Make nosetests supports optional (use unittest2 or unittest)
+- Make nosetests support optional
 - Make Sphinx support optional (overkill for small packages, remove the docs/
   subtree)
 - Tests inside the source tree (in src/<your>/<package>/tests) OR in the

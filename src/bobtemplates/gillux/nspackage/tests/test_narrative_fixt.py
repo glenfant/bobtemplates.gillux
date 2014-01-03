@@ -5,7 +5,7 @@ from nose.tools import nottest, istest
 
 @nottest
 def dummy():
-    # A function that's available from test_narrative.rst
+    # A sample function that's available from test_narrative.rst
     return None
 
 @nottest
