@@ -18,12 +18,12 @@ import resources
 ###
 
 @nottest
-def setup_module():
+def setUpModule():
     # Setups for all tests of this module
     return
 
 @nottest
-def teardown_module():
+def tearDownModule():
     # Cleanups for all tests of this module
     return
 
