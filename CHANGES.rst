@@ -1,6 +1,13 @@
 Changes log
 ===========
 
+1.0.1
+-----
+
+- Distro name and package (Python) name can be distinct.
+- Use of nosetests + coverage is optional
+- Sphinx doc skeleton is optional
+
 1.0.0
 -----
 

@@ -4,13 +4,13 @@
 from setuptools import setup, find_packages
 import os
 
-_version = '1.0.0'
+_version = '1.0.1-dev'
 _test_packages = []
 
-_THIS_DIRECTORY = os.path.abspath(os.path.dirname(__file__))
+_this_directory = os.path.abspath(os.path.dirname(__file__))
 
 def _read(*names):
-    return open(os.path.join(_THIS_DIRECTORY, *names), 'r').read().strip()
+    return open(os.path.join(_this_directory, *names), 'r').read().strip()
 
 
 setup(

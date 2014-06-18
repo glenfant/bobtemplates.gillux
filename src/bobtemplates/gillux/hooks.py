@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Hooks for mr.bob. See http://mrbob.readthedocs.org/en/latest/templateauthor.html#hooks"""
 import os
+import shutil
 import time
 import six
 
@@ -10,12 +11,7 @@ else:
     from urllib2 import urlopen
 import pkg_resources
 
-try:
-    from mrbob.exceptions import ValidationError
-except ImportError:
-    # FIXME: Temporary
-    class ValidationError(Exception):
-        pass
+from mrbob.bobexceptions import ValidationError, SkipQuestion
 
 ###
 # buildout hooks
@@ -38,7 +34,7 @@ def buildout_post_render(config):
     # http://pypi.python.org/pypi/zc.buildout
     bootstrap_url = "http://downloads.buildout.org/{0}/bootstrap.py".format(main_bo_version)
     bootstrap_in = urlopen(bootstrap_url)
-    bootstrap_py_path = os.path.join(config.target_directory, 'bootstrap.py')
+    bootstrap_py_path = target_rel_path(config, 'bootstrap.py')
     with open(bootstrap_py_path, 'w') as bootstrap_py:
         bootstrap_py.write(bootstrap_in.read())
 
@@ -69,9 +65,8 @@ def mybobtemplate_pre_render(config):
 def mybobtemplate_post_render(config):
     # Create required templates
     templatenames = config.variables['templatenames']
-    package_dir = os.path.join(config.target_directory, 'src', 'coderoot')
     for name in templatenames:
-        template_dir = os.path.join(package_dir, name)
+        template_dir = target_rel_path(config, 'src', 'coderoot', name)
         os.mkdir(template_dir)
         with open(os.path.join(template_dir, '.mrbob.ini'), 'w') as fh:
             fh.write(MRBOB_INI)
@@ -102,6 +97,35 @@ description = FIXME: Please provide a short description for this template
 # nspackage hooks
 ###
 
+def pkgname_pre_question(config, question):
+    """Making a defaut package namefrom distro name
+    """
+    distroname = config.variables[u'distroname']
+
+    # Check if distro name is suitable for default package name
+    import keyword
+
+    if keyword.iskeyword(distroname):
+        distroname = u''
+    else:
+        try:
+            exec('import {0}'.format(distroname), {}, {})
+            distroname = u''
+        except ImportError:
+            pass
+        except SyntaxError:
+            distroname = u''
+    question.default = distroname
+    return
+
+
+def doctestinclude_pre_question(config, question):
+    """We'll skip this question if the user did not choose Sphinx
+    """
+    usesphinx = config.variables[u'usesphinx']
+    if not usesphinx:
+        raise SkipQuestion('Useless')
+
 
 def nspackage_pre_render(config):
     pkgname = config.variables['pkgname']
@@ -126,16 +150,12 @@ def nspackage_pre_render(config):
 
 
 def nspackage_post_render(config):
+    """mr.bob Post render hook for the nspackage template
+    """
     # We need to rename the "coderoot" package appropriately
     rename_coderoot(config)
-
-    # setuptools / distribute suck. We cannot distribute empty directories
-    # so we need to add docs/_templates and docs/_static in the distro but
-    # we need to delete them from the built project bootstrap
-    for dirname in ('_templates', '_static'):
-        readme_path = os.path.join(config.target_directory, 'docs', dirname, 'README.rst')
-        os.remove(readme_path)
-
+    unittests_or_nose(config)
+    may_cleanup_sphinx(config)
     scm_support_post_render(config)
 
     # Done
@@ -146,6 +166,36 @@ def nspackage_post_render(config):
 ###
 # Common hooks and utilities
 ###
+
+def may_cleanup_sphinx(config):
+    """Remove Sphinx bootstrap if we don't need it
+    """
+    if not config.variables[u'usesphinx']:
+        sphinx_root = target_rel_path(config, 'docs')
+        shutil.copyfile(os.path.join(sphinx_root, 'changes.rst'), os.path.join(config.target_directory, 'CHANGES.rst'))
+        shutil.rmtree(sphinx_root)
+    return
+
+def unittests_or_nose(config):
+    """Keep resources suited to nosetests or unittests
+    """
+    if config.variables[u'usenose']:
+        rm_rel_path(config, 'tests', 'test_doctests.py')
+    else:
+        rm_rel_path(config, 'tests', 'test_narrative_fixt.py')
+        rm_rel_path(config, 'setup.cfg')
+    return
+
+def empty_sphinx_assets(config):
+    """We need to clear sphinx README.rst placeholders
+    """
+    # setuptools / distribute suck. We cannot distribute empty directories
+    # so we need to add docs/_templates and docs/_static in the distro but
+    # we need to delete them from the built project bootstrap
+    if not config.variables[u'usesphinx']:
+        for dirname in ('_templates', '_static'):
+            rm_rel_path(config, 'docs', dirname, 'README.rst')
+
 
 def scm_support_post_render(config):
     """Keeps the relevant SCM .xxxignore file
@@ -160,8 +210,7 @@ def scm_support_post_render(config):
     }
     scm = config.variables['scmsupport']
     for name in to_remove[scm]:
-        path = os.path.join(config.target_directory, name)
-        os.remove(path)
+        rm_rel_path(config, name)
     return
 
 
@@ -191,6 +240,22 @@ def rename_coderoot(config):
     else:
         # We just need to rename 'coderoot'
         os.rename(os.path.join(src_root, 'coderoot'), os.path.join(src_root, pkgname))
+    return
+
+
+def target_rel_path(config, *path_elts):
+    """Relative path -> target directory absolute path
+    """
+    return os.path.join(config.target_directory, *path_elts)
+
+def rm_rel_path(config, *path_elts):
+    """Remove the file or directory at target directory relative path
+    """
+    file_path = target_rel_path(config, *path_elts)
+    if os.path.isdir(file_path):
+        shutil.rmtree(file_path)
+    else:
+        os.remove(file_path)
     return
 
 NS_INIT = "__import__('pkg_resources').declare_namespace(__name__)\n"

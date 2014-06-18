@@ -17,16 +17,22 @@ Please use a virtualenv to maintain this package, but I should not need to say t
 Grab the source from the SCM repository::
 
   $ python setup.py develop
-  $ easy_install {{{ pkgname }}}[test,devel]
+  $ easy_install {{{ pkgname }}}[dev]
 
 Run the tests::
 
+{{% if usenose %}}
   $ nosetests
+{{% else %}}
+  $ python setup.py test
+{{% endif %}}
 
+{{% if usesphinx %}}
 Build the Sphinx documentation::
 
   $ python setup.py build_sphinx
   $ firefox build/sphinx/html/index.html
+{{% endif %}}
 
 Links
 =====

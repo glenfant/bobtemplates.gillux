@@ -1,3 +1,7 @@
 include README.rst
+{{% if not usesphinx %}}
+include CHANGES.rst
+{{% else %}}
 include docs/contributors.rst
 include docs/changes.rst
+{{% endif %}}

@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 """Unit tests of {{{ pkgname }}}"""
 
+import sys
+{{% if usenose %}}
 from nose.tools import nottest, istest
 from nose.tools import set_trace  # Breakpoint for nosetests
-
-try:
-    # Up to Python 2.6
+{{% else %}}
+nottest = istest = lambda obj: obj  # Fake decoratos provided by nose
+{{% endif %}}
+if sys.version_info < (2, 7):
     import unittest2 as unittest
-except ImportError:
+else:
     import unittest
 
 import resources

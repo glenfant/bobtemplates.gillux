@@ -29,7 +29,22 @@ LOG.addHandler(NullHandler())
 
 # PEP 396 style version marker
 try:
-    __version__ = pkg_resources.get_distribution(__name__).version
+    __version__ = pkg_resources.get_distribution({{{ distroname | pprint }}}).version
 except:
     LOG.warning("Could not get the package version from pkg_resources")
     __version__ = 'unknown'
+
+{{% if not usenose %}}
+# FIXME: This is just for checking doctests setup. You may remove this function.
+# See tests/test_doctests.py from this distro root
+def identity(obj):
+    """Returns the ``obj`` parameter itself
+
+        >>> identity(5)
+        5
+        >>> foo = 2
+        >>> identity(foo) is foo
+        True
+    """
+    return obj
+{{% endif %}}

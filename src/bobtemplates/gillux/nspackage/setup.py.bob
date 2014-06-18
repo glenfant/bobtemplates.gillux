@@ -18,21 +18,27 @@ this_directory = os.path.abspath(os.path.dirname(__file__))
 def read(*names):
     return open(os.path.join(this_directory, *names), 'r').read().strip()
 
+{{% if usesphinx %}}
 long_description = '\n\n'.join(
     [read(*paths) for paths in (('README.rst',),
                                ('docs', 'contributors.rst'),
                                ('docs', 'changes.rst'))]
     )
-
-tests_require = ['nose', 'nosexcover']
+dev_require = ['Sphinx']
+{{% else %}}
+long_description = '\n\n'.join(
+    [read(*paths) for paths in (('README.rst',),('CHANGES.rst',))]
+    )
+dev_require = []
+{{% endif %}}
+{{% if usenose %}}
+dev_require += ['nose', 'coverage']
+{{% endif %}}
 if sys.version_info < (2, 7):
-    tests_require += ['unittest2']
+    dev_require += ['unittest2']
 
-# FIXME: Your egg name may differ from the root package name.
-#        You may change below the "name" parameter to whatever's compatible
-#        with an egg name.
 
-setup(name='{{{ pkgname }}}',
+setup(name='{{{ distroname }}}',
       version=version,
       description="{{{ description }}}",
       long_description=long_description,
@@ -44,7 +50,7 @@ setup(name='{{{ pkgname }}}',
       keywords='',  # FIXME: Add whatefer fits
       author='{{{ author.name }}}',
       author_email='{{{ author.email }}}',
-      url='http://pypi.python.org/pypi/{{{ pkgname }}}',
+      url='http://pypi.python.org/pypi/{{{ distroname }}}',
       license='GPLv3',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
@@ -60,18 +66,12 @@ setup(name='{{{ pkgname }}}',
           ],
       entry_points={
           },
-      tests_require=tests_require,
+      tests_require=dev_require,
+{{% if usenose %}}
       test_suite='nose.collector',
+{{% else %}}
+      test_suite='tests.all_tests',
+{{% endif %}}
       extras_require={
-          'test': tests_require,
-          'devel': ['Sphinx', 'ipython', 'ipdb']
-      },
-      command_options={
-          'build_sphinx': {
-              'project': ('setup.py', '{{{ pkgname }}}'),
-              'version': ('setup.py', version),
-              'release': ('setup.py', version),
-              'source_dir': ('setup.py', os.path.join(this_directory, 'docs'))
-            }
-        },
-      )
+          'dev': dev_require
+      })
