@@ -4,7 +4,7 @@
 from setuptools import setup, find_packages
 import os
 
-_version = '1.0.1-dev'
+_version = '1.1.0'
 _test_packages = []
 
 _this_directory = os.path.abspath(os.path.dirname(__file__))
@@ -16,7 +16,7 @@ def _read(*names):
 setup(
     name='bobtemplates.gillux',
     version=_version,
-    description="Templates for mr.bob",
+    description="Python project bootstraps for mr.bob: usual Python distro, buildout, and mr.bob template",
     long_description=_read('README.rst') + '\n\n' + _read('CHANGES.rst'),
     classifiers=[
         "Programming Language :: Python",

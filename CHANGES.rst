@@ -1,12 +1,17 @@
 Changes log
 ===========
 
-1.0.1
+1.1.0
 -----
 
-- Distro name and package (Python) name can be distinct.
-- Use of nosetests + coverage is optional
-- Sphinx doc skeleton is optional
+- nspackage: Distro name and package (Python) name can be distinct.
+  [glenfant]
+
+- nspackage: Use of nosetests + coverage is optional
+  [glenfant]
+
+- nspackage: Sphinx doc skeleton is optional
+  [glenfant]
 
 1.0.0
 -----
