@@ -82,7 +82,7 @@ Means that you can have the skeleton of a package like ``bobtemplates.gillux``
 in some seconds.
 
 You just need to add the content of your template as described in the `mr.bob
-documentation`_
+user documentation`_
 
 nspackage
 ---------
