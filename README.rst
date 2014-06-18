@@ -3,21 +3,39 @@ bobtemplates.gillux
 ===================
 
 Python package templates for `mr.bob <http://pypi.python.org/pypi/mr.bob/>`_.
-Please read carefully `mr.bob documentation
+Please read carefully `mr.bob user documentation
 <http://mrbob.readthedocs.org/en/latest/index.html>`_ before using this
 package.
 
 Installation
 ============
 
-::
+.. code:: console
 
-  pip install bobtemplates.gillux
+   easy_install bobtemplates.gillux
 
-.. admonition::
-   Note
+.. warning::
 
-   This will install `mr.bob`_ and its requirements too if not already done.
+   `mr.bob`_ is a requirement for ``bobtemplates.gillux``. For a reason I
+   didn't investigate in depth, installing with **pip** like this raises a
+   mysterious ``UnicodeDecodeError`` when installing the required `mr.bob`_
+   package as requirement:
+
+   .. code:: console
+
+      pip install bobtemplates.gillux
+      | (lots of noise)
+      | UnicodeDecodeError: 'ascii' codec can't decode...
+
+   If you really hate ``easy_install`` and want absolutely use ``pip``, this
+   works:
+
+   .. code:: console
+
+      pip install mr.bob
+      pip install bobtemplates.gillux
+
+   But I can't understand why ;)
 
 About the templates
 ===================
@@ -40,9 +58,11 @@ nspackage
 buildout
 --------
 
-Usage ::
+Usage:
 
-  > mrbob [options] bobtemplates.gillux:buildout
+.. code:: console
+
+   mrbob [options] bobtemplates.gillux:buildout
 
 This provides a minimal zc.buildout based project, with a ``bootstrap.py``
 file and a buildout.cfg file. Takes care of differences between versions 1.x
@@ -51,9 +71,11 @@ and 2.x of zc.buildout.
 mybobtemplate
 -------------
 
-Usage ::
+Usage:
 
-  > mrbob [options] bobtemplates.gillux:mybobtemplate
+.. code:: console
+
+   mrbob [options] bobtemplates.gillux:mybobtemplate
 
 Make your own **bobtemplate.yourname** package in a few minutes (or more).
 Means that you can have the skeleton of a package like ``bobtemplates.gillux``
@@ -65,9 +87,11 @@ documentation`_
 nspackage
 ---------
 
-Usage ::
+Usage:
 
-  > mrbob [options] bobtemplates.gillux:nspackage
+.. code:: console
+
+   mrbob [options] bobtemplates.gillux:nspackage
 
 A regular Python package bootstrap with following features:
 
