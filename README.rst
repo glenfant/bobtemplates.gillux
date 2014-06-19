@@ -110,7 +110,7 @@ Two optional features:
   doc with ``python setup.py build_sphinx``. The doctest files may optionally
   be automatically included in the doc.
 
-Package files outline (may change depending on options::
+Package files outline (may change depending on options)::
 
   src/<your>/<package>/  # Your package source skeleton
   docs/                  # Sphinx source tree skeleton
