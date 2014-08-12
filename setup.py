@@ -41,7 +41,7 @@ setup(
         ]
     },
     tests_require=_test_packages,
-    extra_requires={
+    extras_require={
         'test': _test_packages
     }
 )
