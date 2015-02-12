@@ -14,12 +14,16 @@ Developer notes
 
 Please use a virtualenv to maintain this package, but I should not need to say that.
 
-Grab the source from the SCM repository::
+Grab the source from the SCM repository:
+
+.. code:: console
 
   $ python setup.py develop
   $ easy_install {{{ pkgname }}}[dev]
 
-Run the tests::
+Run the tests:
+
+.. code:: console
 
 {{% if usenose %}}
   $ nosetests
@@ -28,7 +32,9 @@ Run the tests::
 {{% endif %}}
 
 {{% if usesphinx %}}
-Build the Sphinx documentation::
+Build the Sphinx documentation:
+
+.. code:: console
 
   $ python setup.py build_sphinx
   $ firefox build/sphinx/html/index.html
