@@ -5,3 +5,4 @@ include CHANGES.rst
 include docs/contributors.rst
 include docs/changes.rst
 {{% endif %}}
+prune tests

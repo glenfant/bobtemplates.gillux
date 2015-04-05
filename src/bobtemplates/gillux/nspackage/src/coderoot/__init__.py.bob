@@ -40,6 +40,9 @@ except:
 def identity(obj):
     """Returns the ``obj`` parameter itself
 
+    :param obj: The parameter to be returned
+    :return: ``obj`` itself
+
         >>> identity(5)
         5
         >>> foo = 2

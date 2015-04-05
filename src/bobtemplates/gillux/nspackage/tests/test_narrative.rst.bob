@@ -2,7 +2,7 @@
 
 FIXME: Write down the tests for your package
 
-.. code-block:: pycon
+.. code:: pycon
 
    >>> dummy() is None
    True

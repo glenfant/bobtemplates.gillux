@@ -5,7 +5,7 @@ About
 Installation
 ============
 
-::
+.. code:: console
 
-  > /your/prefered/python bootstrap.py
-  > bin/buildout
+   /your/prefered/python bootstrap.py
+   bin/buildout

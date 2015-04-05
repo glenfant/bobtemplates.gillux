@@ -1,6 +1,20 @@
 Changes log
 ===========
 
+1.2.0.dev
+---------
+
+- nspackage: A comprehensive doc in README.rst.
+
+- nspackage: PEP 440 compatible initial version.
+  [glenfant]
+
+- nspackage: Sphinx autodoc demo in API chapter.
+  [glenfant]
+
+- all: Use new "code" reStructuredText directive.
+  [glenfant]
+
 1.1.0
 -----
 

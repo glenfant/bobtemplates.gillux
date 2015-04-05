@@ -4,10 +4,11 @@
 from setuptools import setup, find_packages
 import os
 
-_version = '1.1.0'
+_version = '1.2.0'
 _test_packages = []
 
 _this_directory = os.path.abspath(os.path.dirname(__file__))
+
 
 def _read(*names):
     return open(os.path.join(_this_directory, *names), 'r').read().strip()
