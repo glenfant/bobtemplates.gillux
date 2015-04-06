@@ -6,6 +6,8 @@ Changes log
 
 - nspackage: A comprehensive doc in README.rst.
 
+- nspackage: Sphinx skeleton built from 1.3.1 default
+
 - nspackage: PEP 440 compatible initial version.
   [glenfant]
 

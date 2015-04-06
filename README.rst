@@ -58,7 +58,8 @@ About the templates
 nspackage
 ---------
 
-Usage:
+Usage
+~~~~~
 
 .. code:: console
 
@@ -74,10 +75,10 @@ A regular Python package bootstrap with following features:
 Two optional features:
 
 - Tests with `nose <https://nose.readthedocs.org/en/latest/index.html>`_ and
-`coverage <http://pypi.python.org/pypi/coverage/>`_. Run them with
-``nosetests``. Tune your options in generated ``setup.cfg``. By default, tests
-will be "dicovered" automatically (Python 2.7 or 3.3 ``unittest``), or with
-``unittest2`` for other Python versions.
+  `coverage <http://pypi.python.org/pypi/coverage/>`_. Run them with
+  ``nosetests``. Tune your options in generated ``setup.cfg``. By default, tests
+  will be "dicovered" automatically (Python 2.7 or 3.3 ``unittest``), or with
+  ``unittest2`` for other Python versions.
 
 - A `Sphinx <http://sphinx-doc.org/>`_ documentation skeleton. Build the HTML
   doc with ``python setup.py build_sphinx``. The doctest files may optionally
@@ -100,7 +101,8 @@ features.
 Read the generated ``README.rst`` in your newly created package for more
 information about what you got.
 
-.. rubric:: nspackage questions
+nspackage wizard questions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your full name?
 
@@ -158,7 +160,8 @@ What SCM do you plan to use [git|hg|bzr|none]?
   We provide some cookies for Git, Mercurial and Bazaar in the form of a
   ``.gitignore`` or whatever's SCM suited exclude files.
 
-.. rubric:: TODO
+TODO
+~~~~
 
 - Provide a `six <http://pypi.python.org/pypi/six/>`_ support option
 
@@ -189,7 +192,7 @@ Usage:
 
    mrbob [options] bobtemplates.gillux:mybobtemplate
 
-Make your own **bobtemplate.yourname** package in a few minutes (or more).
+Make your own **bobtemplate.yourname** package skeleton in a few minutes.
 Means that you can have the skeleton of a package like ``bobtemplates.gillux``
 in some seconds.
 
