@@ -29,6 +29,7 @@ Run the tests:
   $ nosetests
 {{% else %}}
   $ python setup.py test
+  $ python run_tests.py
 {{% endif %}}
 
 {{% if usesphinx %}}

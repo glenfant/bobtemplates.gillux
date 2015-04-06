@@ -181,6 +181,7 @@ def unittests_or_nose(config):
     """
     if config.variables[u'usenose']:
         rm_rel_path(config, 'tests', 'test_doctests.py')
+        rm_rel_path(config, 'run_tests.py')
     else:
         rm_rel_path(config, 'tests', 'test_narrative_fixt.py')
         rm_rel_path(config, 'setup.cfg')

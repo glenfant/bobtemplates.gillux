@@ -4,9 +4,14 @@ Changes log
 1.2.0.dev
 ---------
 
+- nspackage: Added a "run_tests.py" testrunner command
+  [glenfant]
+
 - nspackage: A comprehensive doc in README.rst.
+  [glenfant]
 
 - nspackage: Sphinx skeleton built from 1.3.1 default
+  [glenfant]
 
 - nspackage: PEP 440 compatible initial version.
   [glenfant]
