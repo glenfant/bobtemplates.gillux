@@ -1,8 +1,8 @@
 Changes log
 ===========
 
-1.2.0.dev
----------
+1.2.0 (2015-04-07)
+------------------
 
 - nspackage: Added a "run_tests.py" testrunner command
   [glenfant]
@@ -22,8 +22,8 @@ Changes log
 - all: Use new "code" reStructuredText directive.
   [glenfant]
 
-1.1.0
------
+1.1.0 (2014-06-18)
+------------------
 
 - nspackage: Distro name and package (Python) name can be distinct.
   [glenfant]
@@ -34,8 +34,8 @@ Changes log
 - nspackage: Sphinx doc skeleton is optional
   [glenfant]
 
-1.0.0
------
+1.0.0 (2014-01-03)
+------------------
 
 - Added the "mybobtemplate" template for new bobtemplates.xxx packages skeletons.
   [glenfant]
@@ -47,8 +47,8 @@ Changes log
   a marker file in some directories then remove them.
   [glenfant]
 
-1.0.0b1
--------
+1.0.0b1 (2013-02-17)
+--------------------
 
 - Python 3 support (alpha). Please feeback
   [glenfant]
@@ -63,8 +63,8 @@ Changes log
   This setuptools / distribute feature really sucks
   [glenfant]
 
-1.0.0a2
--------
+1.0.0a2 (2013-02-10)
+--------------------
 
 - Improved README about namespaces support.
   [glenfant]
@@ -73,8 +73,8 @@ Changes log
   http://mrbob.readthedocs.org/en/latest/userguide.html#collection-of-community-managed-templates
   [glenfant]
 
-1.0.0a1
--------
+1.0.0a1 (2013-02-10)
+--------------------
 
 - First public version
   [glenfant]
