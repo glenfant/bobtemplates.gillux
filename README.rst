@@ -70,7 +70,7 @@ Two optional features:
 Package files outline (may change depending on options)::
 
   src/<your>/<package>/  # Your package source skeleton
-  docs/                  # Sphinx source tree skeleton
+  doc/                  # Sphinx source tree skeleton
   tests/                 # Test module skeleton with nose goodies
   setup.py               # Usual setup script
   setup.cfg
