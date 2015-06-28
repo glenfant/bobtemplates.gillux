@@ -1,10 +1,10 @@
 Changes log
 ===========
 
-1.3.0.dev0
-----------
+1.3.0 (2015-06-28)
+------------------
 
-- general: removed warning about pip bug that's now gone.
+- doc: removed warning about pip bug that's now gone.
   [glenfant]
 
 - nspackage: Added an option for a console command
