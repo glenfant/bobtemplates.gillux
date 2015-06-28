@@ -2,7 +2,7 @@ include README.rst
 {{% if not usesphinx %}}
 include CHANGES.rst
 {{% else %}}
-include docs/contributors.rst
-include docs/changes.rst
+include doc/contributors.rst
+include doc/changes.rst
 {{% endif %}}
 prune tests

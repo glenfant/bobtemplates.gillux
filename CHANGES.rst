@@ -4,8 +4,16 @@ Changes log
 1.3.0.dev0
 ----------
 
-- Future changes here...
+- general: removed warning about pip bug that's now gone.
+  [glenfant]
 
+- nspackage: Added an option for a console command
+  [glenfant]
+
+- nspackage: Replaced package name by distro name when relevant.
+
+- nspackage: Renamed "docs/" to more usual "doc/"
+  [glenfant]
 
 1.2.0 (2015-04-07)
 ------------------

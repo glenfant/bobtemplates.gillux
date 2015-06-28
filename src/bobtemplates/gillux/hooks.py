@@ -129,8 +129,7 @@ def doctestinclude_pre_question(config, question):
 
 def nspackage_pre_render(config):
     pkgname = config.variables['pkgname']
-
-    ul_pkgname = '=' * len(pkgname)
+    distroname = config.variables['distroname']
 
     ns_names = pkgname.split('.')
     py_ns_pkgnames = []
@@ -140,7 +139,8 @@ def nspackage_pre_render(config):
     py_ns_pkgnames = ", ".join(py_ns_pkgnames)
 
     add_vars = {
-        'rst_pkgname': "{0}\n{1}\n{0}".format(ul_pkgname, pkgname),
+        'rst_pkgname': "{0}\n{1}\n{0}".format('=' * len(pkgname), pkgname),
+        'rst_distroname': "{0}\n{1}\n{0}".format('=' * len(distroname), distroname),
         'creation_year': time.gmtime().tm_year,
         'has_namespaces': len(ns_names) > 1,
         'namespace_packages': py_ns_pkgnames
@@ -152,6 +152,7 @@ def nspackage_pre_render(config):
 def nspackage_post_render(config):
     """mr.bob Post render hook for the nspackage template
     """
+    command_post_render(config)
     # We need to rename the "coderoot" package appropriately
     rename_coderoot(config)
     unittests_or_nose(config)
@@ -171,7 +172,7 @@ def may_cleanup_sphinx(config):
     """Remove Sphinx bootstrap if we don't need it
     """
     if not config.variables[u'usesphinx']:
-        sphinx_root = target_rel_path(config, 'docs')
+        sphinx_root = target_rel_path(config, 'doc')
         shutil.copyfile(os.path.join(sphinx_root, 'changes.rst'), os.path.join(config.target_directory, 'CHANGES.rst'))
         shutil.rmtree(sphinx_root)
     return
@@ -191,11 +192,11 @@ def empty_sphinx_assets(config):
     """We need to clear sphinx README.rst placeholders
     """
     # setuptools / distribute suck. We cannot distribute empty directories
-    # so we need to add docs/_templates and docs/_static in the distro but
+    # so we need to add doc/_templates and doc/_static in the distro but
     # we need to delete them from the built project bootstrap
     if not config.variables[u'usesphinx']:
         for dirname in ('_templates', '_static'):
-            rm_rel_path(config, 'docs', dirname, 'README.rst')
+            rm_rel_path(config, 'doc', dirname, 'README.rst')
 
 
 def scm_support_post_render(config):
@@ -221,6 +222,11 @@ def scm_post_choice(config, question, answer):
     if answer not in accepted:
         raise ValidationError("'{0}' is not a valid answer.".format(answer))
     return answer
+
+
+def command_post_render(config):
+    if not config.variables['command']:
+        rm_rel_path(config, 'src', 'coderoot', '__main__.py')
 
 
 def rename_coderoot(config):

@@ -2,40 +2,23 @@
 bobtemplates.gillux
 ===================
 
-Python package templates for `mr.bob <http://pypi.python.org/pypi/mr.bob/>`_.
+``bobtemplates.gillux`` will save your valuable time on a few hours of
+repetitive and tiresome task when you create a new Python package in the form
+of some templates for `mr.bob <http://pypi.python.org/pypi/mr.bob/>`_.
+
 Please read carefully `mr.bob user documentation
-<http://mrbob.readthedocs.org/en/latest/index.html>`_ before using this
-package.
+<http://mrbob.readthedocs.org/en/latest/index.html>`_ if you need to customize
+``bobtemplates.gillux`` beyond what's written hereafter.
+
+If you love ``bobtemplates.gillux``, you may `start it on Github
+<https://github.com/glenfant/bobtemplates.gillux>`_.
 
 Installation
 ============
 
 .. code:: console
 
-   easy_install bobtemplates.gillux
-
-.. warning::
-
-   `mr.bob`_ is a requirement for ``bobtemplates.gillux``. For a reason I
-   didn't investigate in depth, installing with **pip** like this raises a
-   mysterious ``UnicodeDecodeError`` when installing the required `mr.bob`_
-   package as requirement:
-
-   .. code:: console
-
-      pip install bobtemplates.gillux
-      | (lots of noise)
-      | UnicodeDecodeError: 'ascii' codec can't decode...
-
-   If you really hate ``easy_install`` and want absolutely use ``pip``, this
-   works:
-
-   .. code:: console
-
-      pip install mr.bob
-      pip install bobtemplates.gillux
-
-   Please read https://github.com/pypa/pip/pull/1473 about this.
+   pip install bobtemplates.gillux
 
 About the templates
 ===================
@@ -136,6 +119,16 @@ Package description?
 Organization?
 
   The team ou company that owns the package copyright.
+
+Shell command (leave empty if you don't need it)?
+
+  Installing this package will add this command to your system or activated
+  virtualenv.
+
+  This command will be available after you install your new package with
+  ``python setup.py develop`` or installing your released package with ``pip
+  install ...``. The command will execute the ``yourpackage.__main__.main``
+  function, with pre-cooked ``argparse`` and ``logging`` cookies.
 
 Use nose tests [true|false]?
 

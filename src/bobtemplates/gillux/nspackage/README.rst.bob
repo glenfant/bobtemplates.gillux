@@ -1,4 +1,4 @@
-{{{ rst_pkgname }}}
+{{{ rst_distroname }}}
 
 {{{ description }}}
 
@@ -19,7 +19,7 @@ Grab the source from the SCM repository:
 .. code:: console
 
   $ python setup.py develop
-  $ easy_install {{{ pkgname }}}[dev]
+  $ pip install {{{ distroname }}}[dev]
 
 Run the tests:
 
