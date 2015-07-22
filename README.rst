@@ -2,13 +2,14 @@
 bobtemplates.gillux
 ===================
 
-``bobtemplates.gillux`` will save your valuable time on a few hours of
-repetitive and tiresome task when you create a new Python package in the form
-of some templates for `mr.bob <http://pypi.python.org/pypi/mr.bob/>`_.
+``bobtemplates.gillux`` will save a few hours of your valuable time, 
+taking care of repetitive and tiresome tasks when you create a new Python
+package, by way of some templates for 
+`mr.bob <http://pypi.python.org/pypi/mr.bob/>`_.
 
-Please read carefully `mr.bob user documentation
+Please read the `mr.bob user documentation
 <http://mrbob.readthedocs.org/en/latest/index.html>`_ if you need to customize
-``bobtemplates.gillux`` beyond what's written hereafter.
+``bobtemplates.gillux`` beyond what's written here.
 
 If you love ``bobtemplates.gillux``, you may `start it on Github
 <https://github.com/glenfant/bobtemplates.gillux>`_.
@@ -36,7 +37,7 @@ About the templates
 
 `mybobtemplate`_
 
-  Make your own **bobtemplate.yourname** bootstrap in a some seconds (or more).
+  Make your own **bobtemplate.yourname** bootstrap in a few seconds (or more).
 
 nspackage
 ---------
@@ -70,16 +71,16 @@ Two optional features:
 Package files outline (may change depending on options)::
 
   src/<your>/<package>/  # Your package source skeleton
-  doc/                  # Sphinx source tree skeleton
+  doc/                   # Sphinx source tree skeleton
   tests/                 # Test module skeleton with nose goodies
   setup.py               # Usual setup script
   setup.cfg
   README.rst
   MANIFEST.in
 
-Then grep - and optionally fix - the ``FIXME:`` that occur in the resulting
-files tree for optional stuffs I couldn't fix easily with the regular mr.bob
-features.
+Then grep --- and optionally fix --- the ``FIXME:`` markers that occur in the
+resulting file tree for optional things I couldn't fix easily with the
+regular mr.bob features.
 
 Read the generated ``README.rst`` in your newly created package for more
 information about what you got.
@@ -101,13 +102,14 @@ Your mail address?
 
 Distribution name?
 
-  The name of the distro that will be used to install with pip. As ``pip
-  install (this name)``. Make sure that it is not yet used by any of the
+  The name of the distro that will be used to install with pip, as in 
+  ``pip install (this name)``. Make sure that it is not yet used by any of the
   50000+ packages known by PyPI.
 
 Package name - can be with namespaces ("foo.bar.baz") or not ("foo")?
 
-  The name your package is known by Python like in "import foo.bar.baz".
+  The name by which your package is known to Python, as in 
+  ``import foo.bar.baz``.
   Namespace packages are automatically detected for the structure of the
   package directory tree and the registration in ``setup.py``.
 
@@ -118,7 +120,7 @@ Package description?
 
 Organization?
 
-  The team ou company that owns the package copyright.
+  The team or company that owns the package copyright.
 
 Shell command (leave empty if you don't need it)?
 
@@ -133,7 +135,7 @@ Shell command (leave empty if you don't need it)?
 Use nose tests [true|false]?
 
   If you're a nosetests fan, otherwise the tests layout will use the now
-  classical tests auto discovery feature of ``unittest`` or ``unittest2`` for
+  classical tests auto-discovery feature of ``unittest`` or ``unittest2`` for
   older versions of Python.
 
 Add a Sphinx doc skeleton [true|false]?
@@ -151,14 +153,14 @@ Include doctest files in Sphinx doc [true|false]?
 What SCM do you plan to use [git|hg|bzr|none]?
 
   We provide some cookies for Git, Mercurial and Bazaar in the form of a
-  ``.gitignore`` or whatever's SCM suited exclude files.
+  ``.gitignore`` (or whatever file suits the selected SCM).
 
 TODO
 ~~~~
 
 - Provide a `six <http://pypi.python.org/pypi/six/>`_ support option
 
-- Tests inside the source tree (in src/<your>/<package>/tests) OR in the
+- Tests inside the source tree (in `src/<your>/<package>/tests``) OR in the
   package root. Sometimes we prefer to ship source distros with the tests, and
   sometimes (i.e big amount of test data) we prefer to keep a source dist
   small.
@@ -172,9 +174,9 @@ Usage:
 
    mrbob [options] bobtemplates.gillux:buildout
 
-This provides a minimal zc.buildout based project, with a ``bootstrap.py``
-file and a buildout.cfg file. Takes care of differences between versions 1.x
-and 2.x of zc.buildout.
+This provides a minimal ``zc.buildout`` based project, with a ``bootstrap.py``
+file and a ``buildout.cfg`` file. Takes care of differences between versions
+1.x and 2.x of ``zc.buildout``.
 
 mybobtemplate
 -------------
@@ -186,8 +188,8 @@ Usage:
    mrbob [options] bobtemplates.gillux:mybobtemplate
 
 Make your own **bobtemplate.yourname** package skeleton in a few minutes.
-Means that you can have the skeleton of a package like ``bobtemplates.gillux``
-in some seconds.
+This means that you can have the skeleton of a package like
+``bobtemplates.gillux`` in just a few seconds.
 
 You just need to add the content of your template as described in the `mr.bob
 user documentation`_
