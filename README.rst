@@ -11,7 +11,7 @@ Please read the `mr.bob user documentation
 <http://mrbob.readthedocs.org/en/latest/index.html>`_ if you need to customize
 ``bobtemplates.gillux`` beyond what's written here.
 
-If you love ``bobtemplates.gillux``, you may `start it on Github
+If you love ``bobtemplates.gillux``, you may `star it on Github
 <https://github.com/glenfant/bobtemplates.gillux>`_.
 
 Installation
