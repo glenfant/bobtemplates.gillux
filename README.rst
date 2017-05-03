@@ -163,6 +163,8 @@ TODO
   sometimes (i.e big amount of test data) we prefer to keep a source dist
   small.
 
+- Remove annoying xxx.pyc files I dunno why they are created by mrbob (?)
+
 buildout
 --------
 
