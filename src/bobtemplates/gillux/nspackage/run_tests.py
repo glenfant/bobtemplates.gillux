@@ -5,20 +5,26 @@
 Running all tests
 =================
 
-To have a fine grained control over the tests to run, you may use with Python
-2.7 and later::
+To have a fine grained control over the tests to run::
 
   python -m unittest -h
-
-If you have unittest2, use the ``unit2`` command instead::
-
-  unit2 -h
 """
+import argparse
 import sys
-if sys.version_info < (2, 7):
-    import unittest2 as unittest
-else:
-    import unittest
+import unittest
 from tests import all_tests
 
-unittest.TextTestRunner(verbosity=2).run(all_tests())
+
+exit_code = 1
+
+ap = argparse.ArgumentParser(epilog='Try: "python -m unittest -h" for more options.')
+ap.add_argument('-v', '--verbosity', action='store', type=int, default=0, metavar="LEVEL",
+                help="verbosity level: 0 (default), 1 or 2")
+args = ap.parse_args()
+
+results = unittest.TextTestRunner(verbosity=args.verbosity).run(all_tests())
+
+issues_count = len(results.failures) + len(results.errors)
+if issues_count == 0:
+    exit_code = 0
+sys.exit(exit_code)
