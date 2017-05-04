@@ -6,7 +6,7 @@
 """
 
 # FIXME: Please read http://pythonhosted.org/distribute/setuptools.html to
-#        customize in depth your setup script
+#        customize your setup script in depth
 
 from setuptools import setup, find_packages
 import os, sys
@@ -25,7 +25,7 @@ long_description = '\n\n'.join(
 
 
 # FIXME: Your egg name may differ from the root package name.
-#        You may change below the "name" parameter to whatever's compatible
+#        You may change the "name" parameter below to whatever is compatible
 #        with an egg name.
 
 setup(name='{{{ pkgname }}}',
@@ -37,7 +37,7 @@ setup(name='{{{ pkgname }}}',
           "Programming Language :: Python",
           "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
       ],
-      keywords='',  # FIXME: Add whatefer fits
+      keywords='',  # FIXME: Add whatever fits
       author='{{{ author.name }}}',
       author_email='{{{ author.email }}}',
       url='http://pypi.python.org/pypi/{{{ pkgname }}}',
